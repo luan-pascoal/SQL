@@ -1,5 +1,5 @@
--- LISTA FUNÇÕES MATEMATICAS
--- Luan Pascoal - 4° ADS
+-- LISTA FUNÃ‡Ã•ES MATEMATICAS
+-- Luan Pascoal - 4Â° ADS
 
 SELECT nome, salario + PI() FROM Funcionario 
 
@@ -25,4 +25,4 @@ SELECT SQRT(idFuncionario) FROM Funcionario
 
 SELECT POWER(idFuncionario,2) FROM Funcionario
 
-SELECT ABS(idFuncionario - 10) as absoluteCinema FROM Funcionario ORDER BY absoluteCinema DESC
+SELECT ABS(idFuncionario - 10) as absoluto FROM Funcionario ORDER BY absoluto DESC
