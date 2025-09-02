@@ -25,15 +25,15 @@ SELECT COUNT(*) FROM Funcionario WHERE nome LIKE '%Luís%'
 
 SELECT MIN(salario), MAX(salario) FROM Funcionario WHERE endereco LIKE '%Av. São Paulo%'
 
-SELECT cargo, COUNT(*) FROM Funcionario GROUP BY cargo ORDER BY quantidade
+SELECT cargo, COUNT(*) as quantidade FROM Funcionario GROUP BY cargo ORDER BY quantidade
 
-SELECT cargo, COUNT(*) FROM Funcionario GROUP BY cargo WHERE cargo IS NOT NULL
+SELECT cargo, COUNT(*) FROM Funcionario WHERE cargo IS NOT NULL GROUP BY cargo 
 
 SELECT cargo, AVG(salario) AS Media_Salarios_Cargo FROM Funcionario GROUP BY cargo
 
-SELECT cargo, SUM(salario) FROM Funcionario GROUP BY cargo WHERE cargo > 3000
+SELECT cargo, SUM(salario) FROM Funcionario GROUP BY cargo HAVING SUM(salario) > 3000
 
-SELECT cargo, SUM(salario) FROM Funcionario GROUP BY cargo WHERE estado = 'SP'
+SELECT cargo, SUM(salario) FROM Funcionario WHERE estado = 'SP' GROUP BY cargo 
 
 UPDATE Funcionario SET ativo = 1 WHERE cidade IN ('Jundiaí', 'São Paulo')
 
@@ -43,9 +43,10 @@ SELECT ativo, COUNT(*) FROM Funcionario GROUP BY ativo
 
 SELECT cidade, SUM(salario) FROM Funcionario GROUP BY cidade
 
-SELECT cidade, AVG(salario) FROM Funcionario GROUP BY cidade WHERE salario IS NOT NULL
+SELECT cidade, AVG(salario) FROM Funcionario WHERE salario IS NOT NULL GROUP BY cidade 
 
-SELECT cargo, SUM(salario) AS soma, AVG(salario) AS media FROM Funcionario GROUP BY cargo WHERE soma < 5000
+SELECT cargo, SUM(salario) AS soma, AVG(salario) AS media FROM Funcionario GROUP BY cargo HAVING SUM(salario) < 5000
 
 SELECT cidade, cargo, SUM(salario) AS soma, AVG(salario) AS media FROM Funcionario GROUP BY cidade, cargo
+
 
