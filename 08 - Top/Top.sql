@@ -1,1 +1,41 @@
--- Top-- Luan Pascoal - 4° ADSSELECT TOP 4 nome FROM FuncionarioSELECT TOP 2 * FROM Funcionario WHERE cidade = 'Valinhos'SELECT TOP 1 nome,dataNasctoFROM FuncionarioORDER BY dataNasctoSELECT TOP 2 cidade, COUNT (*) AS quantidadeFROM Funcionario GROUP BY cidadeSELECT TOP 2 cargo, COUNT (*) AS quantidadeFROM Funcionario WHERE cargo IS NOT NULLGROUP BY cargo SELECT TOP 30 PERCENT * FROM FuncionarioSELECT TOP 6 nome, email FROM FuncionarioSELECT TOP 70 PERCENT idFuncionario, cargo, ativo FROM FuncionarioSELECT TOP 1 idFuncionario, salario FROM Funcionario WHERE salario IS NOT NULL ORDER BY salarioSELECT TOP 1 nome, salario FROM Funcionario ORDER BY salario DESCSELECT TOP 1 nome, endereco FROM Funcionario ORDER BY idFuncionarioSELECT TOP 90 PERCENT * FROM FuncionarioSELECT TOP 1 * FROM Funcionario WHERE cidade = 'São Paulo'SELECT TOP 20 PERCENT nome, endereco, cidade, estadoFROM FuncionarioSELECT TOP 2 * FROM FuncionarioWHERE YEAR(dataNascto) = 1988
+-- Top
+-- Luan Pascoal - 4Â° ADS
+
+SELECT TOP 4 nome FROM Funcionario
+  
+SELECT TOP 2 * FROM Funcionario WHERE cidade = 'Valinhos'
+  
+SELECT TOP 1 nome,
+dataNascto
+FROM Funcionario
+ORDER BY dataNascto
+
+SELECT TOP 2 cidade, COUNT (*) AS quantidade
+FROM Funcionario GROUP BY cidade
+
+SELECT TOP 2 cargo, COUNT (*) AS quantidade
+FROM Funcionario WHERE cargo IS NOT NULL
+GROUP BY cargo 
+
+SELECT TOP 30 PERCENT * FROM Funcionario
+
+SELECT TOP 6 nome, email FROM Funcionario
+
+SELECT TOP 70 PERCENT idFuncionario, cargo, ativo FROM Funcionario
+
+SELECT TOP 1 idFuncionario, salario FROM Funcionario 
+WHERE salario IS NOT NULL ORDER BY salario
+
+SELECT TOP 1 nome, salario FROM Funcionario ORDER BY salario DESC
+
+SELECT TOP 1 nome, endereco FROM Funcionario ORDER BY idFuncionario
+
+SELECT TOP 90 PERCENT * FROM Funcionario
+
+SELECT TOP 1 * FROM Funcionario WHERE cidade = 'SÃ£o Paulo'
+
+SELECT TOP 20 PERCENT nome, endereco, cidade, estado
+FROM Funcionario
+
+SELECT TOP 2 * FROM Funcionario
+WHERE YEAR(dataNascto) = 1988
