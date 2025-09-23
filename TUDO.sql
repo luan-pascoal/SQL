@@ -35,7 +35,7 @@ DROP DATABASE Concessionaria
 
 
 
-===========================================================================
+--===========================================================================
 
 
   
@@ -148,7 +148,7 @@ DELETE FROM Funcionario WHERE idFuncionario = 5
 
 
 
-===========================================================================
+--===========================================================================
 
 
 
@@ -212,7 +212,7 @@ WHERE nome LIKE '__r%'
 
 
 
-===========================================================================
+--===========================================================================
 
   
 
@@ -242,7 +242,7 @@ SELECT nome FROM Funcionario WHERE DAY(dataNascto) = 30
 
 
 
-===========================================================================
+--===========================================================================
 
 
 
@@ -274,8 +274,10 @@ SELECT ABS(idFuncionario - 10) as absoluto FROM Funcionario ORDER BY absoluto DE
 
 
 
-===========================================================================
+--===========================================================================
 
+
+	
 SELECT UPPER(nome) FROM Funcionario
 
 SELECT DISTINCT DATENAME(MONTH, dataNascto),  LEN(DATENAME(MONTH,dataNascto)) FROM Funcionario
@@ -301,7 +303,8 @@ SELECT LTRIM(RIGHT(cidade,6)) FROM Funcionario
 SELECT DISTINCT LOWER(cidade) FROM Funcionario
 
 
-===========================================================================
+	
+--===========================================================================
 
 
 
@@ -355,7 +358,7 @@ SELECT cidade, cargo, SUM(salario) AS soma, AVG(salario) AS media FROM Funcionar
 
 
 
-===========================================================================
+--===========================================================================
 
 
 
@@ -400,7 +403,7 @@ WHERE YEAR(dataNascto) = 1988
 
 
 
-===========================================================================
+--===========================================================================
 
 
 CREATE DATABASE Pizzaria_Fatec
@@ -467,6 +470,7 @@ CREATE TABLE Itens_Pedido (
 	FOREIGN KEY (ID_Produto) REFERENCES Produto (ID_Produto) ON DELETE SET NULL,
 	FOREIGN KEY (Numero_Pedido) REFERENCES Pedido (Numero_Pedido) ON DELETE CASCADE,
 )
+
 
 
 
