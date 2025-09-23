@@ -1,8 +1,6 @@
 -- Laboratorio de Banco de Dados
 -- Luan Pascoal do Bem Silva
 
--- DML
-
 CREATE DATABASE RecursosHumanos
 GO
 
@@ -102,81 +100,8 @@ UPDATE Funcionario SET
 cargo = 'TI',salario = 750 WHERE cidade = 'Jundiaí'
 GO
 
---select nome, cargo from Funcionario
-
---select idFuncionario, email from Funcionario where estado = 'SP'
-
 DELETE FROM Funcionario WHERE idFuncionario = 5
 
---select distinct cidade, estado from Funcionario where cargo = 'PC' 
 
+SELECT * FROM Funcionario
 
-
-
-
-
--- OPERADORES
-
-
-
-SELECT salario *1.3 FROM Funcionario
-
-SELECT nome,
-salario,
-salario*0.8 AS salario_desconto
-FROM Funcionario
-WHERE cidade = 'Campinas'
-
-SELECT nome,
-salario
-FROM Funcionario
-WHERE salario>1500
-
-SELECT nome,
-cidade
-FROM Funcionario
-WHERE NOT cidade = 'Valinhos'
-
-SELECT idFuncionario,
-cidade
-FROM Funcionario
-WHERE cidade = 'Valinhos' or cidade = 'Campinas'
-
-SELECT idFuncionario,
-cargo,
-salario
-FROM Funcionario
-WHERE cidade <> 'Sao Paulo' and salario >=1000
-
-SELECT nome
-FROM Funcionario
-WHERE cargo IS NULL
-
-SELECT nome,
-salario
-FROM Funcionario
-WHERE salario BETWEEN 500 AND 1500
-
-SELECT nome
-FROM Funcionario
-WHERE email LIKE '%hotmail%'
-
-SELECT nome,
-email
-FROM Funcionario
-WHERE email LIKE '%br'
-ORDER BY nome
-
-SELECT nome,
-email
-FROM Funcionario
-WHERE email NOT LIKE '%com'
-
-SELECT nome, 
-email
-FROM Funcionario
-WHERE nome LIKE '__r%'
-
-
-
-	
